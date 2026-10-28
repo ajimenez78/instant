@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111411" />
+    <title>LAST LIGHT — Arena</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="game"></div>
+    <div class="grain"></div>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark"><span>✳</span></div><div class="brand-name">LAST <b>LIGHT</b></div></div>
+      <div class="top-meta"><span class="map-name">DUST BOWL&nbsp; / &nbsp;SECTOR 07</span><span class="live"><i></i> LIVE MATCH</span></div>
+    </header>
+    <div class="corner">COMBAT SIMULATION&nbsp; · &nbsp;NO. 001</div>
+    <div class="hud-top"><span>ELIMINATIONS</span><strong id="score">00</strong><span class="divider">/</span><span>01</span><span class="divider">·</span><span id="timer">00:00</span></div>
+    <div class="threat-hud"><span>BOT RANGE</span><strong id="botRange">16 M</strong><span class="divider">·</span><span id="botStatus">CLOSING</span></div>
+    <div class="crosshair" id="crosshair"></div>
+    <div class="toast" id="toast">TARGET HIT</div>
+    <div class="damage-flash" id="damageFlash"></div>
+    <div class="bottom-hud">
+      <div class="health-panel">
+        <div class="hud-label">YOUR VITALS</div>
+        <div class="health-value"><span id="playerHealth">100</span><small> / 100</small></div>
+        <div class="meter"><i id="playerMeter"></i></div>
+      </div>
+      <div class="ammo-panel" id="ammoPanel">
+        <div class="hud-label">VX-7 AUTO&nbsp; / &nbsp;AMMO</div>
+        <div class="ammo-value"><span id="ammoCount">12</span><small> / 12</small></div>
+        <div class="ammo-hint" id="ammoHint">SPACE FIRE&nbsp; · &nbsp;R RELOAD</div>
+      </div>
+      <div class="opponent-panel">
+        <div class="hud-label">OPPONENT&nbsp; / &nbsp;BOT-01</div>
+        <div class="health-value"><span id="botHealth">100</span><small> / 100</small></div>
+        <div class="meter"><i id="botMeter"></i></div>
+      </div>
+    </div>
+    <div class="weapon" aria-hidden="true">
+      <svg viewBox="0 0 520 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M183 230 208 141l21-16h97l29 28 34 77H183Z" fill="#22251f"/>
+        <path d="m224 137 14-50 24-19h57l27 19 10 69-30-27h-97l-5 8Z" fill="#373a31"/>
+        <path d="m245 80 13-27h55l19 28h-87Z" fill="#696b5d"/>
+        <path d="m258 53 5-18h43l8 18h-56Z" fill="#9d9b84"/>
+        <path d="m222 123 18-21h96l23 20" stroke="#d7f45b" stroke-width="3"/>
+        <path d="M269 103h40" stroke="#1b1d17" stroke-width="8"/>
+        <path d="M270 100h37" stroke="#747466" stroke-width="2"/>
+        <path d="m368 150 30 18-8 12-27-13m-154-28-26 13 5 13 25-12" fill="#2b2e26"/>
+        <path d="m196 230 15-64h33l-16 64m133 0-22-65h33l26 65" fill="#171a16"/>
+        <path d="m236 171 19-9h49l21 8" stroke="#4a4b40" stroke-width="3"/>
+        <circle cx="285" cy="139" r="4" fill="#d7f45b"/>
+      </svg>
+    </div>
+    <div class="overlay" id="overlay">
+      <section class="modal">
+        <div class="eyebrow" id="modalEyebrow">ONE ON ONE &nbsp; / &nbsp; ARENA COMBAT</div>
+        <h1 id="modalTitle">LAST<br /><span>LIGHT.</span></h1>
+        <p class="intro" id="modalIntro">One arena. One opponent. No second chances. Take down the training bot before it takes you out.</p>
+        <div class="controls">
+          <div class="control"><span class="key">↑</span><span>MOVE FORWARD</span></div>
+          <div class="control"><span class="key">↓</span><span>MOVE BACK</span></div>
+          <div class="control"><span class="key">←</span><span>TURN LEFT</span></div>
+          <div class="control"><span class="key">→</span><span>TURN RIGHT</span></div>
+          <div class="control"><span class="key wide">SPACE</span><span>FIRE WEAPON</span></div>
+          <div class="control"><span class="key">R</span><span>RELOAD</span></div>
+        </div>
+        <button class="start-button" id="startButton">ENTER THE ARENA &nbsp; ↗</button>
+        <div class="modal-foot">BEST PLAYED FULL SCREEN &nbsp;·&nbsp; SOUND ON</div>
+      </section>
+    </div>
+    <script type="module" src="./game.js"></script>
+  </body>
+</html>
